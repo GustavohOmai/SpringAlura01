@@ -21,5 +21,7 @@ public class MedicoController {
     @Transactional
     public void cadastrar(@RequestBody @Valid DadosMedico dados) {
         repository.save(new Medico(dados));
-    } 
+    }
 }
+
+//GIT TEST
