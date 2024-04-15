@@ -5,7 +5,7 @@ public record DadosEndereco(
         String bairro,
         String cep,
         String cidade,
-        String UF,
+        String uf,
         String complemento,
         String numero) {
 
