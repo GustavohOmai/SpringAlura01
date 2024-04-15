@@ -17,9 +17,10 @@ import med.voll.api.Model.Endereco;
 public class Medico {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  Long id;
+    private Long id;
     private String nome;
     private String email;
+    private String telefone;
     private String crm;
     @Enumerated
     private Especialidade especialidade;
@@ -31,6 +32,7 @@ public class Medico {
         this.nome = dados.nome();
         this.crm = dados.crm();
         this.email = dados.email();
+        this.telefone = dados.telefone();
         this.endereco = new Endereco(dados.endereco());
         this.especialidade = dados.especialidade();
     }
