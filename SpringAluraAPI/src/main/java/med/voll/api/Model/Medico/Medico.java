@@ -13,7 +13,7 @@ import med.voll.api.Model.Endereco;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of ="id")
+@EqualsAndHashCode(of = "id")
 public class Medico {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,7 +22,7 @@ public class Medico {
     private String email;
     private String telefone;
     private String crm;
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private Especialidade especialidade;
 
     @Embedded
@@ -30,10 +30,10 @@ public class Medico {
 
     public Medico(DadosMedico dados) {
         this.nome = dados.nome();
-        this.crm = dados.crm();
         this.email = dados.email();
         this.telefone = dados.telefone();
-        this.endereco = new Endereco(dados.endereco());
+        this.crm = dados.crm();
         this.especialidade = dados.especialidade();
+        this.endereco = new Endereco(dados.endereco());
     }
 }
